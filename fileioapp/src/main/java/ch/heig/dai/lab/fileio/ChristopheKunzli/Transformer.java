@@ -64,7 +64,7 @@ public class Transformer {
         StringBuilder wrapped = new StringBuilder();
         String[] words = source.split(" ");
 
-        int numberOfLines = (int) Math.ceil((double) words.length / numWordsPerLine);
+        int numberOfLines = words.length / numWordsPerLine + (words.length % numWordsPerLine == 0 ? 0 : 1);
         for (int i = 0; i < numberOfLines; ++i) {
             wrapped.append(i + 1).append(". ");
 
