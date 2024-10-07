@@ -22,9 +22,15 @@ public class EncodingSelector {
 
         //Get extension of the file and put it to lowercase
         String fileName = file.getName().toLowerCase();
+        int lastDotIndex = fileName.lastIndexOf('.');
 
+        if (lastDotIndex == -1 || lastDotIndex == fileName.length() - 1) {
+            return null;
+        }
+
+        String extension = fileName.substring(lastDotIndex + 1);
         //Switch check all wanted extension name and returns the corresponding StandardCharsets
-        return switch (fileName) {
+        return switch (extension) {
             case "utf8"-> StandardCharsets.UTF_8;
             case "txt"-> StandardCharsets.US_ASCII;
             case "utf16be"-> StandardCharsets.UTF_16BE;
