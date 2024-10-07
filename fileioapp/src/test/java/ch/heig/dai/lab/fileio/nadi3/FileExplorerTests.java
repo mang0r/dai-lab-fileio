@@ -1,7 +1,5 @@
 package ch.heig.dai.lab.fileio.nadi3;
 
-import ch.heig.dai.lab.fileio.jehrensb.FileExplorer;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -13,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FileExplorerTests {
 
     @Test
-    @Disabled
     public void getNewFilesTest() throws IOException {
         // Create a temporary directory under the default temp directory using java.io.File
 
@@ -22,7 +19,7 @@ public class FileExplorerTests {
         tempDir.deleteOnExit();
 
         // Create a FileExplorer for that directory
-        ch.heig.dai.lab.fileio.jehrensb.FileExplorer explorer = new FileExplorer(tempDir.toString());
+        ch.heig.dai.lab.fileio.nadi3.FileExplorer explorer = new FileExplorer(tempDir.toString());
 
         // Check that no files are found
         assertEquals(explorer.getNewFile(), null);
