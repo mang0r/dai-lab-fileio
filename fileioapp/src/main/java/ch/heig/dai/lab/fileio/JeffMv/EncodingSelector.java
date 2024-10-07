@@ -24,6 +24,8 @@ public class EncodingSelector {
 
         String fname = file.getName();
 
+        // v1
+        /*
         if (fname.endsWith(".utf8")) {
             return StandardCharsets.UTF_8;
         } else if (fname.endsWith(".txt")) {
@@ -32,6 +34,23 @@ public class EncodingSelector {
             return StandardCharsets.UTF_16BE;
         } else if (fname.endsWith(".utf16le")) {
             return StandardCharsets.UTF_16LE;
+        }*/
+
+        // v2
+        // WARNING : don't use split(".") split takes a rege...
+        var parts = fname.split("\\.");
+
+        String extension = parts[parts.length - 1];
+        switch (extension) {
+            case "utf8":
+                return StandardCharsets.UTF_8;
+            case "txt":
+                return StandardCharsets.US_ASCII;
+            case "utf16be":
+                return StandardCharsets.UTF_16BE;
+            case "utf16le":
+                return StandardCharsets.UTF_16LE;
+        }
 
         return null;
     }
