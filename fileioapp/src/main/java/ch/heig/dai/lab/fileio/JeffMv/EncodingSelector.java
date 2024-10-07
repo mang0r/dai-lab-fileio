@@ -2,6 +2,7 @@ package ch.heig.dai.lab.fileio.JeffMv;
 
 import java.io.File;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class EncodingSelector {
 
@@ -17,7 +18,21 @@ public class EncodingSelector {
      * @return the encoding of the file, or null if the extension is not recognized
      */
     public Charset getEncoding(File file) {
-        // TODO: implement the method body here
+
+        // The method getEncoding returns the Charset to be used to read an input file.
+        // It does this by looking at the extension of the file name.
+
+        String fname = file.getName();
+
+        if (fname.endsWith(".utf8")) {
+            return StandardCharsets.UTF_8;
+        } else if (fname.endsWith(".txt")) {
+            return StandardCharsets.US_ASCII;
+        } else if (fname.endsWith(".utf16be")) {
+            return StandardCharsets.UTF_16BE;
+        } else if (fname.endsWith(".utf16le")) {
+            return StandardCharsets.UTF_16LE;
+
         return null;
     }
 }
