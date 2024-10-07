@@ -1,8 +1,10 @@
 // TODO change this to your own package instead of jehrensb ***
-package ch.heig.dai.lab.fileio.jehrensb;
+package Michaprog;
 
-import org.junit.jupiter.api.Test;
+import ch.heig.dai.lab.fileio.Michaprog.Transformer;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TransformerTest {

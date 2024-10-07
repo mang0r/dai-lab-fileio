@@ -1,11 +1,14 @@
 // TODO change this to your own package instead of jehrensb ***
-package ch.heig.dai.lab.fileio.jehrensb;
+package Michaprog;
 
-import org.junit.jupiter.api.Test;
+import ch.heig.dai.lab.fileio.Michaprog.EncodingSelector;
 import org.junit.jupiter.api.Disabled;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EncodingSelectorTest {
 
