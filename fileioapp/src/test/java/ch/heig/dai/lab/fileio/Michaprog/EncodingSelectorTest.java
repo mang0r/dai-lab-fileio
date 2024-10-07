@@ -1,7 +1,6 @@
 // TODO change this to your own package instead of jehrensb ***
-package Michaprog;
+package ch.heig.dai.lab.fileio.Michaprog;
 
-import ch.heig.dai.lab.fileio.Michaprog.EncodingSelector;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
