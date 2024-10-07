@@ -3,7 +3,6 @@ package ch.heig.dai.lab.fileio.chomusukeworks;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Optional;
 
 public class FileExplorer {
