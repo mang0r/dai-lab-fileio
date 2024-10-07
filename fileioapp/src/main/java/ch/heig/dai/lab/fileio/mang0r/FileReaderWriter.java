@@ -1,6 +1,6 @@
-package ch.heig.dai.lab.fileio.jehrensb;
+package ch.heig.dai.lab.fileio.mang0r;
 
-import java.io.*;
+import java.io.File;
 import java.nio.charset.Charset;
 
 public class FileReaderWriter {
