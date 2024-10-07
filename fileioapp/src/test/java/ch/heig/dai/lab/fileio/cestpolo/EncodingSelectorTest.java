@@ -1,6 +1,7 @@
 // TODO change this to your own package instead of jehrensb ***
 package ch.heig.dai.lab.fileio.cestpolo;
 
+import ch.heig.dai.lab.fileio.CestPolo.EncodingSelector;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package ch.heig.dai.lab.fileio.cestpolo;
+package ch.heig.dai.lab.fileio.CestPolo;
 
 import java.io.File;
 import java.nio.charset.Charset;
