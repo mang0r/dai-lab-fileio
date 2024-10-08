@@ -24,8 +24,23 @@ public class FileExplorer {
      * Use the HashSet knownFiles to keep track of the files that have already been returned.
      * @return a new file, or null if there is no new file
      */
-    public File getNewFile() {
-        // TODO: implement the method body here
+    public File getNewFile()
+    {
+        File[] files = folder.listFiles();
+        
+        if (files.length > 0)
+        {
+            for (File file : files)
+            {
+                if (!knownFiles.contains(file))
+                {
+                    knownFiles.add(file);
+                    return file;
+                }
+            }
+        }
+
         return null;
     }
+    
 }
