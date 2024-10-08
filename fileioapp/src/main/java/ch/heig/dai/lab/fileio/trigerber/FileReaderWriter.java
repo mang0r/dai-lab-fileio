@@ -12,9 +12,6 @@ public class FileReaderWriter {
      * @return the content of the file as a String, or null if an error occurred.
      */
     public String readFile(File file, Charset encoding) {
-        // TODO: Implement the method body here. 
-        // Use the ...Stream and ...Reader classes from the java.io package.
-        // Make sure to close the streams and readers at the end.
         if (file.exists()) {
             try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), encoding))) {
 
