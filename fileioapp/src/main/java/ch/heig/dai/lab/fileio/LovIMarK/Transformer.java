@@ -23,13 +23,11 @@ public class Transformer {
      * @return the transformed string
      */
     public String replaceChuck(String source) {
-        String transformed=source;
         if(source.contains("Chuck Norris"))
         {
-            transformed=source.replace("Chuck Norris",newName);
+            return source.replace("Chuck Norris",newName);
         }
-
-        return transformed;
+        return source;
     }
 
     /**
