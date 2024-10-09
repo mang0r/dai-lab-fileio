@@ -7,7 +7,7 @@ public class FileReaderWriter {
 
     /**
      * Read the content of a file with a given encoding.
-     * @param file the file to read. 
+     * @param file the file to read.
      * @param encoding
      * @return the content of the file as a String, or null if an error occurred.
      */
@@ -44,19 +44,17 @@ public class FileReaderWriter {
      */
     public boolean writeFile(File file, String content, Charset encoding) {
 
-        if(file.exists()) {
-            try (OutputStream oS = new FileOutputStream(file);
-                 Writer writer = new OutputStreamWriter(oS, encoding);
-                 BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
+        try (OutputStream oS = new FileOutputStream(file);
+             Writer writer = new OutputStreamWriter(oS, encoding);
+             BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
 
-                bufferedWriter.write(content);
-                bufferedWriter.flush();
-                return true;
-            } catch (IOException e) {
+            bufferedWriter.write(content);
+            bufferedWriter.flush();
+            return true;
+        } catch (IOException e) {
                 System.out.println("Exception: " + e);
-                return false;
-            }
+            return false;
         }
-        return false;
+
     }
 }
