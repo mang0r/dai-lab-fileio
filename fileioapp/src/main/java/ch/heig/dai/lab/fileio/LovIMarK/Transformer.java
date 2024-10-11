@@ -1,5 +1,9 @@
 package ch.heig.dai.lab.fileio.LovIMarK;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 public class Transformer {
 
     private final String newName;
@@ -36,26 +40,11 @@ public class Transformer {
      * @return the transformed string
      */
     public String capitalizeWords(String source) {
-        String[] words = source.split(" ");
 
-        StringBuilder capitalized = new StringBuilder();
+        return Stream.of(source.split(" "))
+                .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase())
+                .collect(Collectors.joining(" "));
 
-        // Loop through each word in the array.
-        for (String word : words) {
-            if (!word.isEmpty()) {
-                // Extract the first letter and capitalize it.
-                String firstLetter = word.substring(0, 1).toUpperCase();
-
-                // Extract the rest of the word and convert it to lowercase.
-                String restOfWord = word.substring(1).toLowerCase();
-
-                // Append the capitalized word to the StringBuilder.
-                capitalized.append(firstLetter).append(restOfWord).append(" ");
-            }
-        }
-
-        // Return the result as a string, trimming the extra space at the end.
-        return capitalized.toString().trim();
     }
 
     /**
