@@ -25,7 +25,7 @@ public class FileExplorer {
      * @return a new file, or null if there is no new file
      */
     public File getNewFile() {
-      if(folder.isDirectory()){
+     
       File[] files =  folder.listFiles();
       if(files != null){    
         for(File file : files){
@@ -35,7 +35,6 @@ public class FileExplorer {
           }
         }
       }
-    }
         return null;
      
     }
