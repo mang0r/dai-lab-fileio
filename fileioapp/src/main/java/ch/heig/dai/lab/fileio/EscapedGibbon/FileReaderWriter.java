@@ -38,7 +38,7 @@ public class FileReaderWriter {
      * @param encoding the encoding to use
      * @return true if the file was written successfully, false otherwise
      */
-    public boolean writeFile(File file, String content, Charset encoding) {
+    public boolean writeFile(File file, String content, Charset encoding) throws IOException{
       try (FileOutputStream fos = new FileOutputStream(file);
           OutputStreamWriter osr = new OutputStreamWriter(fos, encoding);
           BufferedWriter writer = new BufferedWriter(osr)){
