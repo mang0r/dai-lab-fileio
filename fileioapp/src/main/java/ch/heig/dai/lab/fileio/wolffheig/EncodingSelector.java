@@ -19,18 +19,28 @@ public class EncodingSelector {
      */
     public Charset getEncoding(File file) {
 
-        // Get the file name
+        // Get the file name from the File object
         String fileName = file.getName();
 
-        // Check the file extension and return the corresponding Charset
-        if (fileName.endsWith(".utf8")) {
-            return StandardCharsets.UTF_8;
-        } else if (fileName.endsWith(".txt")) {
-            return StandardCharsets.US_ASCII;
-        } else if (fileName.endsWith(".utf16be")) {
-            return StandardCharsets.UTF_16BE;
-        } else if (fileName.endsWith(".utf16le")) {
-            return StandardCharsets.UTF_16LE;
+        // Find the position of the last '.' in the file name to extract the extension
+        int lastIndexOfDot = fileName.lastIndexOf('.');
+
+        // Check if a valid extension exists
+        if (lastIndexOfDot != -1) {
+            // Extract the extension
+            String extension = fileName.substring(lastIndexOfDot);
+
+            // Match the extracted extension with the right charset
+            switch (extension) {
+                case ".utf8":
+                    return StandardCharsets.UTF_8;
+                case ".txt":
+                    return StandardCharsets.US_ASCII;
+                case ".utf16be":
+                    return StandardCharsets.UTF_16BE;
+                case ".utf16le":
+                    return StandardCharsets.UTF_16LE;
+            }
         }
 
         // The extension is not recognized
