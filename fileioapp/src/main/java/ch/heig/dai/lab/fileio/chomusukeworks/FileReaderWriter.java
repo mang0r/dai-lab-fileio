@@ -14,10 +14,28 @@ public class FileReaderWriter {
 	 * @return the content of the file as a String, or null if an error occurred.
 	 */
 	public String readFile(File file, Charset encoding) {
-		// TODO: Implement the method body here.
-		// Use the ...Stream and ...Reader classes from the java.io package.
-		// Make sure to close the streams and readers at the end.
-		return null;
+		try {
+			var is = new BufferedReader(new InputStreamReader(
+					new FileInputStream(file.getName()),
+					encoding
+			));
+
+			StringBuilder output = new StringBuilder();
+			String buffer;
+
+			while ((buffer = is.readLine()) != null) {
+				output.append(buffer);
+				output.append('\n');
+			}
+
+			is.close();
+
+			return output.toString();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+
+			return null;
+		}
 	}
 
 	/**
