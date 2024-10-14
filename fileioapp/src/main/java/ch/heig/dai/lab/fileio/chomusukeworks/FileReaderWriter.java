@@ -16,7 +16,7 @@ public class FileReaderWriter {
 	public String readFile(File file, Charset encoding) {
 		try {
 			var is = new BufferedReader(new InputStreamReader(
-					new FileInputStream(file.getName()),
+					new FileInputStream(file.getPath()),
 					encoding
 			));
 
@@ -27,6 +27,9 @@ public class FileReaderWriter {
 				output.append(buffer);
 				output.append('\n');
 			}
+
+			// Remove the line break at the end of the file
+			output.deleteCharAt(output.length() - 1);
 
 			is.close();
 
