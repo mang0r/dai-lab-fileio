@@ -51,9 +51,20 @@ public class FileReaderWriter {
 	 * @return true if the file was written successfully, false otherwise
 	 */
 	public boolean writeFile(File file, String content, Charset encoding) {
-		// TODO: Implement the method body here.
-		// Use the ...Stream and ...Reader classes from the java.io package.
-		// Make sure to flush the data and close the streams and readers at the end.
-		return false;
+		try {
+			var os = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(file.getPath()),
+					encoding
+			));
+
+			os.write(content);
+			os.close();
+
+			return true;
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+
+			return false;
+		}
 	}
 }
