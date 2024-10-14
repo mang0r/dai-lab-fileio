@@ -13,6 +13,18 @@ public class FileReaderWriter {
      */
     public String readFile(File file, Charset encoding) {
         // TODO: Implement the method body here. 
+
+        try (Reader reader = new BufferedReader(new FileReader(file.getName(), encoding))){
+            String line = "";
+            while((line = reader.readLine()) != null){
+                
+            }
+
+        } catch (IOException e){
+            System.out.println("Exception: " + e);
+        }
+
+
         // Use the ...Stream and ...Reader classes from the java.io package.
         // Make sure to close the streams and readers at the end.
         return null;
