@@ -1,6 +1,5 @@
 package ch.heig.dai.lab.fileio.adamrab187;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
