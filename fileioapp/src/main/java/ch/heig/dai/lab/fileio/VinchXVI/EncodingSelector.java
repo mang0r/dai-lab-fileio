@@ -21,7 +21,7 @@ public class EncodingSelector {
 
         String[] parsedName = file.getName().split("\\.");
         if (parsedName.length == 0) return null;
-        System.out.println(parsedName[parsedName.length - 1]);
+        //System.out.println(parsedName[parsedName.length - 1]);
         switch (parsedName[parsedName.length-1]) {
             case "utf8": return Charset.forName("UTF-8");
             case "txt": return Charset.forName("US-ASCII");
