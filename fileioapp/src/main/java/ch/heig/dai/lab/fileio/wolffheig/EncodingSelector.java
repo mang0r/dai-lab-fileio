@@ -25,9 +25,10 @@ public class EncodingSelector {
         // Find the position of the last '.' in the file name to extract the extension
         int lastIndexOfDot = fileName.lastIndexOf('.');
 
-        // Check if a valid extension exists
-        if (lastIndexOfDot != -1) {
-            // Extract the extension
+        // Ensure there is a '.' and that it's not the first character
+        if (lastIndexOfDot != -1 && lastIndexOfDot != fileName.length() - 1) {
+
+            // Extract the part after the last '.' to check if it's a valid extension
             String extension = fileName.substring(lastIndexOfDot);
 
             // Match the extracted extension with the right charset
