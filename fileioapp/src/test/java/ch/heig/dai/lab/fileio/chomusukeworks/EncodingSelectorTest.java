@@ -2,9 +2,9 @@
 package ch.heig.dai.lab.fileio.chomusukeworks;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
@@ -23,8 +23,8 @@ public class EncodingSelectorTest {
 
 	@Test
 	public void nullTest() {
-		assertEquals(null, selector.getEncoding(new File("file1.utf")));
-		assertEquals(null, selector.getEncoding(new File("file1")));
+		assertNull(selector.getEncoding(new File("file1.utf")));
+		assertNull(selector.getEncoding(new File("file1")));
 	}
 
 	@Test
