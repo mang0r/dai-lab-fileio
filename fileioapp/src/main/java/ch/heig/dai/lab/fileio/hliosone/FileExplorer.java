@@ -1,4 +1,4 @@
-package ch.heig.dai.lab.fileio.axelrochat;
+package ch.heig.dai.lab.fileio.hliosone;
 
 import java.io.File;
 import java.util.HashSet;

@@ -10,7 +10,7 @@ public class FileExplorer {
     /**
      * Constructor
      * Memorize the folder to explore and initialize the set of known files.
-     * @param folder
+     * @param folder Path to directory
      */
     public FileExplorer(String folder) {
         this.folder = new File(folder);
@@ -26,6 +26,16 @@ public class FileExplorer {
      */
     public File getNewFile() {
         // TODO: implement the method body here
+        File[] files = folder.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && !knownFiles.contains(file)) {
+                    knownFiles.add(file);
+                    return file;
+                }
+            }
+        }
         return null;
     }
 }
