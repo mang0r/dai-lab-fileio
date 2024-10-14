@@ -71,12 +71,22 @@ public class Transformer {
 
             // If the number of words per line is reached, wrap to the next line
             if (wordCount == numWordsPerLine) {
+                // Trim the extra space at the end of the line before moving to the next one
+                wrapped.setLength(wrapped.length() - 1);
                 wrapped.append(System.lineSeparator())
                         .append(lineNumber++).append(". ");  // Start a new numbered line
                 wordCount = 0;
             }
         }
 
-        return wrapped.toString().trim();  // Return the result with no trailing spaces
+        // If there are leftover words, end the last line cleanly
+        if (wordCount > 0) {
+            wrapped.setLength(wrapped.length() - 1);  // Remove the trailing space
+        }
+
+        // Append the final newline character
+        wrapped.append(System.lineSeparator());
+
+        return wrapped.toString();  // Return the result
     }
 }
