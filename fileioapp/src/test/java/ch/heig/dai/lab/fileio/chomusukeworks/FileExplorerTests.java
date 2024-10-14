@@ -3,6 +3,7 @@ package ch.heig.dai.lab.fileio.chomusukeworks;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class FileExplorerTests {
 		FileExplorer explorer = new FileExplorer(tempDir.toString());
 
 		// Check that no files are found
-		assertEquals(explorer.getNewFile(), null);
+		assertNull(explorer.getNewFile());
 
 		// Create some files in the directory and check that they are found
 		Set<File> expectedFiles = Set.of(
@@ -41,7 +42,7 @@ public class FileExplorerTests {
 		assertEquals(expectedFiles, actualFiles);
 
 		// Check that no files are found
-		assertEquals(explorer.getNewFile(), null);
+		assertNull(explorer.getNewFile());
 
 		// Create some files in the directory and check that they are found
 		expectedFiles = Set.of(
