@@ -35,8 +35,16 @@ public class Transformer {
 	 * @return the transformed string
 	 */
 	public String capitalizeWords(String source) {
-		// TODO: Implement the method body here.
-		return "";
+		String[] words = source.split(" ");
+
+		var result = new StringBuilder();
+
+		for (String word : words) {
+			result.append(' ');
+			result.append(firstCharToUpperCase(word));
+		}
+
+		return result.substring(1);
 	}
 
 	/**
@@ -50,5 +58,9 @@ public class Transformer {
 		// TODO: Implement the method body here.
 		// Use the StringBuilder class to build the result string.
 		return "";
+	}
+
+	private String firstCharToUpperCase(String word) {
+		return word.substring(0, 1).toUpperCase() + word.substring(1);
 	}
 }   
