@@ -1,6 +1,5 @@
 // TODO change this to your own package instead of jehrensb ***
 package ch.heig.dai.lab.fileio.Michaprog;
-import ch.heig.dai.lab.fileio.Michaprog.FileExplorer;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
