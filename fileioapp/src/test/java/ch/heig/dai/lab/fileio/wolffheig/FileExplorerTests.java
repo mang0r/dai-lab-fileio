@@ -22,18 +22,18 @@ public class FileExplorerTests {
 
         // Check that no files are found
         assertEquals(explorer.getNewFile(), null);
-        
+
         // Create some files in the directory and check that they are found
         Set<File> expectedFiles = Set.of(
-            new File(tempDir, "file1.txt"),
-            new File(tempDir, "file2.txt"),
-            new File(tempDir, "file3.txt")
+                new File(tempDir, "file1.txt"),
+                new File(tempDir, "file2.txt"),
+                new File(tempDir, "file3.txt")
         );
         for (File file : expectedFiles) { file.createNewFile(); }
         Set<File> actualFiles = Set.of(
-            explorer.getNewFile(),
-            explorer.getNewFile(),
-            explorer.getNewFile()
+                explorer.getNewFile(),
+                explorer.getNewFile(),
+                explorer.getNewFile()
         );
         assertEquals(expectedFiles, actualFiles);
 
@@ -42,13 +42,13 @@ public class FileExplorerTests {
 
         // Create some files in the directory and check that they are found
         expectedFiles = Set.of(
-            new File(tempDir, "file4.txt"),
-            new File(tempDir, "file5.txt")
+                new File(tempDir, "file4.txt"),
+                new File(tempDir, "file5.txt")
         );
         for (File file : expectedFiles) { file.createNewFile(); }
         actualFiles = Set.of(
-            explorer.getNewFile(),
-            explorer.getNewFile()
+                explorer.getNewFile(),
+                explorer.getNewFile()
         );
         assertEquals(expectedFiles, actualFiles);
     }
