@@ -23,20 +23,30 @@ public class Transformer {
      * @return the transformed string
      */
     public String replaceChuck(String source) {
-        // TODO: Implement the method body here.
-        return "";
+        String oldName = "Chuck Norris";
+        String result = source.replaceAll(oldName,newName);
+        return result;
     }
 
-    /**
+     /**
      * Capitalize the first letter of each word in the string.
      * @param source the string to transform
      * @return the transformed string
      */
     public String capitalizeWords(String source) {
-        // TODO: Implement the method body here.
-        return "";
+        
+      StringBuilder result = new StringBuilder();
+      String[] words = source.split(" "); // Split the string into words.
+      
+      for (String word : words) {
+          if (word.length() > 0) {
+              // Capitalize the first letter and append the rest.
+              result.append(Character.toUpperCase(word.charAt(0)))
+                    .append(word.substring(1)).append(" ");
+          }
+      }
+      return result.toString().trim();
     }
-
     /**
      * Wrap the text so that there are at most numWordsPerLine words per line.
      * Number the lines starting at 1.
@@ -44,8 +54,23 @@ public class Transformer {
      * @return the transformed string
      */
     public String wrapAndNumberLines(String source) {
-        // TODO: Implement the method body here.
-        // Use the StringBuilder class to build the result string.
-        return "";
+      StringBuilder str = new StringBuilder();
+      String[] words = source.split(" ");
+      int lineIndex = 1;
+      str.append(lineIndex).append(". ");
+      for(int i = 0; i < words.length;i++){
+        if((i+1)%numWordsPerLine != 0){
+          str.append(words[i]).append(" ");
+        }else{
+          str.append(words[i]).append(System.lineSeparator());
+          str.append(++lineIndex).append(". ");
+        }
+      }
+      String result = str.toString().trim();
+      if(words.length%numWordsPerLine != 0){
+        result+=System.lineSeparator();
+      } 
+        
+        return result;
     }
 }   

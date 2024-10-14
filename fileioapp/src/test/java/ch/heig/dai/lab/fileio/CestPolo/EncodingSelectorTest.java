@@ -1,7 +1,6 @@
 // TODO change this to your own package instead of jehrensb ***
-package ch.heig.dai.lab.fileio.cestpolo;
+package ch.heig.dai.lab.fileio.CestPolo;
 
-//import ch.heig.dai.lab.fileio.CestPolo.EncodingSelector;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,10 +9,9 @@ import java.nio.charset.StandardCharsets;
 
 public class EncodingSelectorTest {
 
-    //private final EncodingSelector selector = new EncodingSelector();
-/*
+    private final EncodingSelector selector = new EncodingSelector();
+
     @Test
-    @Disabled
     public void encodingTest() {
         assertEquals (StandardCharsets.UTF_8, selector.getEncoding(new File("file1.utf8")));
         assertEquals (StandardCharsets.US_ASCII, selector.getEncoding(new File("file1.txt")));
@@ -32,6 +30,4 @@ public class EncodingSelectorTest {
         assertEquals (StandardCharsets.UTF_8, selector.getEncoding(new File("file1.txt.utf8")));
         assertEquals (StandardCharsets.US_ASCII, selector.getEncoding(new File("file1.utf8.txt")));
     }
-
- */
 }
