@@ -27,10 +27,6 @@ public class Main {
      */
     public static void main(String[] args) {
         // Read command line arguments
-        boolean DEBUG = true;
-        if (DEBUG) {
-            args = new String[]{"/Users/user/Projets/hes-repos/hes-dai-lab-fileio/jokes", "4"};
-        }
         if (args.length != 2 || !new File(args[0]).isDirectory()) {
             System.out.println("You need to provide two command line arguments: an existing folder and the number of words per line.");
             System.exit(1);
@@ -45,10 +41,10 @@ public class Main {
 
 
         while (true) {
+
             try {
                 // TODO: loop over all files
                 File file = explorer.getNewFile();
-                System.out.println(file.getName());
                 if (file == null || !file.exists()) {
                     break;
                 }
@@ -63,12 +59,10 @@ public class Main {
                 content = transformer.wrapAndNumberLines(content);
 
                 String destPath = destinationFilepath(file);
-                // String destPath = file.getAbsolutePath() + ".processed";
                 fileHandler.writeFile(new File(destPath), content, encoding);
 
             } catch (Exception e) {
                 System.out.println("Exception: " + e);
-                // raise(e);
             }
         }
     }
