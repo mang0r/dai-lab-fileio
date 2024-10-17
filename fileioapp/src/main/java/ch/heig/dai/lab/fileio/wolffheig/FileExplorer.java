@@ -25,10 +25,9 @@ public class FileExplorer {
      * @return a new file, or null if there is no new file
      */
     public File getNewFile() {
-
         // Ensure the folder exists and is a directory
         if (!folder.exists() || !folder.isDirectory()) {
-            return null;
+            throw new IllegalArgumentException("The provided folder path is not valid: " + folder.getPath());
         }
 
         // Get the list of files in the folder
