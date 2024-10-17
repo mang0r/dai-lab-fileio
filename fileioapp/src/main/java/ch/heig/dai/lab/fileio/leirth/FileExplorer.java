@@ -1,9 +1,7 @@
-package ch.heig.dai.lab.fileio.mang0r;
+package ch.heig.dai.lab.fileio.leirth;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Optional;
 
 public class FileExplorer {
     private final File folder;
@@ -27,9 +25,7 @@ public class FileExplorer {
      * @return a new file, or null if there is no new file
      */
     public File getNewFile() {
-        Optional<File> f = Arrays.stream(folder.listFiles()).filter(a -> !knownFiles.contains(a)).findAny();
-        if (f.isEmpty()) return null;
-        knownFiles.add(f.get());
-        return f.get();
+        // TODO: implement the method body here
+        return null;
     }
 }
