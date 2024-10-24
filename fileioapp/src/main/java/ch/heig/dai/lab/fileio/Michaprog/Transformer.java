@@ -58,8 +58,9 @@ public class Transformer {
         result.append(lineCount).append(". ");
 
         for(String word : words){
-            result.append(word).append(" ");
+            result.append(word);
             wourdCount++;
+            if(wourdCount != numWordsPerLine) result.append(" ");
 
             if(wourdCount == numWordsPerLine){
                 result.append("\n");
@@ -68,6 +69,7 @@ public class Transformer {
                 wourdCount = 0;
             }
         }
-        return result.toString().trim();
+        result.append("\n");
+        return result.toString().trim()+ System.lineSeparator();
     }
 }   
