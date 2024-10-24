@@ -13,7 +13,8 @@ public class Transformer {
      * @param numWordsPerLine the number of words per line to use when wrapping the text
      */
     public Transformer(String newName, int numWordsPerLine) {
-       
+        this.newName = newName;
+        this.numWordsPerLine = numWordsPerLine;
     }
 
     /**
@@ -22,7 +23,11 @@ public class Transformer {
      * @return the transformed string
      */
     public String replaceChuck(String source) {
-       
+        if (source == null) {
+            return null;
+        }
+
+        return source.replaceAll("Chuck Norris", newName);
     }
 
     /**
@@ -32,7 +37,18 @@ public class Transformer {
      */
     public String capitalizeWords(String source) {
         
-       
+        if (source == null || source.isEmpty()) {
+            return null;
+        }
+
+        String[] words = source.split(" ");
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            result.append(word.substring(0, 1).toUpperCase());
+            result.append(word.substring(1));
+            result.append(" ");
+        }
+        return result.toString().trim();
     }
 
     /**
@@ -44,5 +60,36 @@ public class Transformer {
     public String wrapAndNumberLines(String source) {
         // Use the StringBuilder class to build the result string.
 
+        if (source == null || source.isEmpty() || numWordsPerLine <= 0) {
+            return null;
+        }
+
+        String[] words = source.split(" ");
+        StringBuilder result = new StringBuilder();
+        int lineCount = 1;
+        int wordCount = 0;
+
+        for (String word : words) {
+            if (wordCount == 0) {
+                result.append(lineCount).append(". ");
+                lineCount++;
+            }
+            result.append(word);
+            wordCount++;
+            
+            if (wordCount >= numWordsPerLine) {
+                result.append(System.lineSeparator());
+                wordCount = 0;
+                continue;
+            }
+            result.append(" ");
+        }
+
+        // Remove last space
+        if (result.charAt(result.length() - 1) == ' ') {
+            result.deleteCharAt(result.length() - 1);
+        }
+        
+        return result.append(System.lineSeparator()).toString();
     }
 }   
