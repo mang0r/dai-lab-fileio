@@ -1,4 +1,5 @@
-package ch.heig.dai.lab.fileio.Michaprog;
+package ch.heig.dai.lab.fileio.leirth;
+
 public class Transformer {
 
     private final String newName;
@@ -22,7 +23,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String replaceChuck(String source) {
-        return source.replace("Chuck Norris", newName);
+        // TODO: Implement the method body here.
+        return "";
     }
 
     /**
@@ -31,16 +33,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String capitalizeWords(String source) {
-        String[] words = source.split(" ");
-        StringBuilder result = new StringBuilder();
-        for(String word : words){
-            if(!word.isEmpty()) {
-                result.append(Character.toUpperCase(word.charAt(0)))
-                        .append(word.substring(1));
-            }
-            result.append(" ");
-        }
-        return result.toString().trim();
+        // TODO: Implement the method body here.
+        return "";
     }
 
     /**
@@ -50,26 +44,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String wrapAndNumberLines(String source) {
-        String[] words = source.split(" ");
-        StringBuilder result = new StringBuilder();
-        int lineCount = 1;
-        int wourdCount = 0;
-
-        result.append(lineCount).append(". ");
-
-        for(String word : words){
-            result.append(word);
-            wourdCount++;
-            if(wourdCount != numWordsPerLine) result.append(" ");
-
-            if(wourdCount == numWordsPerLine){
-                result.append("\n");
-                lineCount++;
-                result.append(lineCount).append(". ");
-                wourdCount = 0;
-            }
-        }
-        result.append("\n");
-        return result.toString().trim()+ System.lineSeparator();
+        // TODO: Implement the method body here.
+        // Use the StringBuilder class to build the result string.
+        return "";
     }
 }   
