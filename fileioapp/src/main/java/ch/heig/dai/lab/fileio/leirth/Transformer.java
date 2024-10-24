@@ -1,4 +1,4 @@
-package ch.heig.dai.lab.fileio.JeffMv;
+package ch.heig.dai.lab.fileio.leirth;
 
 public class Transformer {
 
@@ -23,7 +23,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String replaceChuck(String source) {
-        return source.replaceAll("Chuck Norris", this.newName);
+        // TODO: Implement the method body here.
+        return "";
     }
 
     /**
@@ -32,11 +33,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String capitalizeWords(String source) {
-        String[] words = source.split(" ");
-        for (int i=0; i < words.length; ++i) {
-            words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
-        }
-        return String.join(" ", words);
+        // TODO: Implement the method body here.
+        return "";
     }
 
     /**
@@ -46,31 +44,8 @@ public class Transformer {
      * @return the transformed string
      */
     public String wrapAndNumberLines(String source) {
+        // TODO: Implement the method body here.
         // Use the StringBuilder class to build the result string.
-        String lineSep = System.lineSeparator();
-        // String lineSep = "\r\n"; // System.lineSeparator();
-
-        var words = source.split(" ");
-        int wordsInLine = 0;
-        int nbLines = 1;
-
-        StringBuilder result = new StringBuilder(nbLines + ". ");
-        for (int i=0; i < words.length; ++i) {
-            if (wordsInLine >= this.numWordsPerLine) {
-                result.append(lineSep);
-                wordsInLine = 0;
-                nbLines++;
-                result.append(nbLines);
-                result.append(". ");
-            }
-            result.append(words[i]);
-
-            if (wordsInLine < this.numWordsPerLine - 1 && i < words.length - 1) {
-                result.append(" ");
-            }
-            ++wordsInLine;
-        }
-        result.append(lineSep);
-        return result.toString();
+        return "";
     }
 }   
