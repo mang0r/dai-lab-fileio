@@ -52,7 +52,7 @@ public class FileReaderWriter {
         //ouvrir le fichier en mode écriture dans le try comme vu en cours
         try (var writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), encoding))) {
 
-            writer.write(content);
+            writer.write(content+"\r\n"); //\r\n pour faire un retour à la ligne compatible avec windows même si en réalité y en a plus besoin (par précaution)
             writer.flush();
 
             return true; //retourne le contenu du fichier
