@@ -47,6 +47,9 @@ public class FileReaderWriter {
         // TODO: Implement the method body here. 
         // Use the ...Stream and ...Reader classes from the java.io package.
         // Make sure to flush the data and close the streams and readers at the end.
+        if(file == null || content == null || encoding == null) {
+            return false;
+        }
         try (
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, encoding);
