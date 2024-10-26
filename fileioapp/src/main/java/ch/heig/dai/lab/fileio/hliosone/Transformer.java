@@ -24,6 +24,10 @@ public class Transformer {
      */
     public String replaceChuck(String source) {
         // TODO: Implement the method body here.
+        if(source != null && !source.isEmpty()){
+            // replace all occurences of "Chuck Norris" with newName
+            return source.replaceAll("Chuck Norris", newName);
+        }
         return "";
     }
 
@@ -34,6 +38,24 @@ public class Transformer {
      */
     public String capitalizeWords(String source) {
         // TODO: Implement the method body here.
+        // capitalize the first letter of each word in the string
+        if(source != null && !source.isEmpty()){
+            StringBuilder sbuilder = new StringBuilder();
+            String[] words = source.split(" ");
+
+            for (String word : words){
+                if (!word.isEmpty()){
+                    sbuilder.append(Character.toUpperCase(word.charAt(0)))
+                            .append(word.substring(1));
+                }
+                if (!word.equals(words[words.length - 1])){
+                    sbuilder.append(" ");
+                }
+            }
+
+            return sbuilder.toString();
+        }
+
         return "";
     }
 
@@ -46,6 +68,40 @@ public class Transformer {
     public String wrapAndNumberLines(String source) {
         // TODO: Implement the method body here.
         // Use the StringBuilder class to build the result string.
-        return "";
+        if (source == null || source.isEmpty()) {
+            return "";
+        }
+        if (this.numWordsPerLine < 1) {
+            System.out.println("The number of words per line must be greater than 0.");
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        String[] words = source.split(" ");
+        int wordCount = 0;
+        int lineCount = 1;
+
+        sb.append(lineCount).append(". ");
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                sb.append(word);
+                wordCount++;
+            }
+
+            if (wordCount == numWordsPerLine) {
+                sb.append("\n");
+                wordCount = 0;
+                lineCount++;
+                sb.append(lineCount).append(". ");
+            } else {
+                sb.append(" ");
+            }
+        }
+
+        String result = sb.toString().replaceAll(" \n", "\n").trim();
+        result += "\n";
+        
+        return result;
     }
 }   
