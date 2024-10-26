@@ -62,12 +62,12 @@ public class Transformer {
         // TODO: Implement the method body here.
         // Use the StringBuilder class to build the result string.
         String[] words=source.split(" ");//récupère la liste de mot dans le string
-        StringBuilder sb = new StringBuilder(); //
+        StringBuilder sb = new StringBuilder();
         int line=1;//numero de la ligne que je fais afficher dans le fichier
 
         for(int i=0;i<words.length;i++)
         {
-            if(i%numWordsPerLine==0)//si on a atteinds le nombre de mots par ligne
+            if(i%numWordsPerLine==0)//si on a atteinds le nombre de mots max par ligne
             {
                 if(i!=0) //vérifier que c'est pas le premier mot (si y a espace avant le premier mots de la ligne pas c'est pas logique)
                 {
@@ -84,8 +84,7 @@ public class Transformer {
             }
 
         }
-        //sb.append("\n");
         sb.append("\n");
-        return sb.toString(); //supprimer les espace en plus
+        return sb.toString();
     }
 }   
