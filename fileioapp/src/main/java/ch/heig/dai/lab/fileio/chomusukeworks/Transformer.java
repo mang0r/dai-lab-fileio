@@ -39,14 +39,11 @@ public class Transformer {
 	public String capitalizeWords(String source) {
 		String[] words = source.split(" ");
 
-		var result = new StringBuilder();
-
-		for (String word : words) {
-			result.append(' ');
-			result.append(firstCharToUpperCase(word));
+		for (int i = 0; i < words.length; i++) {
+			words[i] = firstCharToUpperCase(words[i]);
 		}
 
-		return result.substring(1);
+		return String.join(" ", words);
 	}
 
 	/**
