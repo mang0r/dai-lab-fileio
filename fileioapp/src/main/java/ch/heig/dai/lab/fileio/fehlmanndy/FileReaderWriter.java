@@ -1,6 +1,6 @@
-package ch.heig.dai.lab.fileio.Jerome_Riedo;
+package ch.heig.dai.lab.fileio.fehlmanndy;
 
-import java.io.*;
+import java.io.File;
 import java.nio.charset.Charset;
 
 public class FileReaderWriter {

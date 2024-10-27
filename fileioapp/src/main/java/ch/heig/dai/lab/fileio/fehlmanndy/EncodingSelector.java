@@ -1,4 +1,4 @@
-package ch.heig.dai.lab.fileio.leirth;
+package ch.heig.dai.lab.fileio.fehlmanndy;
 
 import java.io.File;
 import java.nio.charset.Charset;
@@ -17,15 +17,7 @@ public class EncodingSelector {
      * @return the encoding of the file, or null if the extension is not recognized
      */
     public Charset getEncoding(File file) {
-        if (file.getName().endsWith(".utf8")) {
-            return Charset.forName("UTF-8");
-        } else if (file.getName().endsWith(".txt")) {
-            return Charset.forName("US-ASCII");
-        } else if (file.getName().endsWith(".utf16be")) {
-            return Charset.forName("UTF-16BE");
-        } else if (file.getName().endsWith(".utf16le")) {
-            return Charset.forName("UTF-16LE");
-        }
+        // TODO: implement the method body here
         return null;
     }
 }
