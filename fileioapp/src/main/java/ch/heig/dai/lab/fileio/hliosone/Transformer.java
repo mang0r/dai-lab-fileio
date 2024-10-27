@@ -80,18 +80,22 @@ public class Transformer {
 
         sb.append(lineCount).append(". ");
 
-        for (String word : words) {
-            sb.append(word);
+        for (int i = 0; i < words.length; i++) {
+            sb.append(words[i]);
             wordCount++;
 
-            if (wordCount == numWordsPerLine) {
+            if (wordCount == numWordsPerLine && i < words.length - 1) {
                 sb.append("\n").append(++lineCount).append(". ");
                 wordCount = 0;
-            } else {
+            } else if (i < words.length - 1) {
                 sb.append(" ");
             }
         }
 
-        return sb.toString().trim() + "\n";
+        if (wordCount > 0) {
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 }   
