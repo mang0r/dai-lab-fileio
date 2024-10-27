@@ -65,10 +65,12 @@ public class Transformer {
 			int first = i * numWordsPerLine;
 			int last = Math.min((i + 1) * numWordsPerLine, words.size());
 
-			result.append(String.format("%d. %s\n",
+			String line = String.format("%d. %s\n",
 					i + 1,
 					String.join(" ", words.subList(first, last))
-			));
+			);
+
+			result.append(line);
 		}
 
 		return result.toString();
