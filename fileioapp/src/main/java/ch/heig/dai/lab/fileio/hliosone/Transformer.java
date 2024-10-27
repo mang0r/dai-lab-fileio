@@ -68,40 +68,30 @@ public class Transformer {
     public String wrapAndNumberLines(String source) {
         // TODO: Implement the method body here.
         // Use the StringBuilder class to build the result string.
-        if (source == null || source.isEmpty()) {
-            return "";
-        }
-        if (this.numWordsPerLine < 1) {
+        if (source == null || source.isEmpty() || numWordsPerLine < 1) {
             System.out.println("The number of words per line must be greater than 0.");
             return "";
         }
 
         StringBuilder sb = new StringBuilder();
-        String[] words = source.split(" ");
+        String[] words = source.trim().split("\\s+");
         int wordCount = 0;
         int lineCount = 1;
 
         sb.append(lineCount).append(". ");
 
         for (String word : words) {
-            if (!word.isEmpty()) {
-                sb.append(word);
-                wordCount++;
-            }
+            sb.append(word);
+            wordCount++;
 
             if (wordCount == numWordsPerLine) {
-                sb.append("\n");
+                sb.append("\n").append(++lineCount).append(". ");
                 wordCount = 0;
-                lineCount++;
-                sb.append(lineCount).append(". ");
             } else {
                 sb.append(" ");
             }
         }
 
-        String result = sb.toString().replaceAll(" \n", "\n").trim();
-        result += "\n";
-        
-        return result;
+        return sb.toString().trim() + "\n";
     }
 }   
