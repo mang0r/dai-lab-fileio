@@ -77,14 +77,15 @@ public class Transformer {
             if (wordCount == numWordsPerLine) {
                 wordCount = 0;
                 lineNumber++;
-                result.append(System.lineSeparator())
-                      .append(lineNumber).append(". ");
+                result.append("\n").append(lineNumber).append(". ");
+            } else if (wordCount > 0) {
+                result.append(" ");
             }
-            
-            result.append(word).append(" ");
+    
+            result.append(word);
             wordCount++;
         }
-    
+
         return result.toString().trim() + "\n";
     }
     
