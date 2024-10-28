@@ -55,7 +55,7 @@ public class Main {
                 frw.writeFile(
                     of,
                     transformer.replaceChuck(frw.readFile(f, selector.getEncoding(f))), 
-                    selector.getEncoding(f));
+                        selector.getEncoding(f));
 
             } catch (Exception e) {
                 System.out.println("Exception: " + e);
