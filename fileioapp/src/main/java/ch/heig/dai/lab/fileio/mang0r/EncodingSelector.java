@@ -2,7 +2,6 @@ package ch.heig.dai.lab.fileio.mang0r;
 
 import java.io.File;
 import java.nio.charset.Charset;
-import java.util.Map;
 
 public class EncodingSelector {
 
@@ -19,18 +18,6 @@ public class EncodingSelector {
      */
     public Charset getEncoding(File file) {
         // TODO: implement the method body here
-        Map<String, String> availableCharsetsKeys = Map.of(
-            ".utf8",    "UTF-8",
-            ".txt",     "US-ASCII",
-            ".utf16be", "UTF-16BE",
-            ".utf16le", "UTF-16LE");
-
-        try {
-            return Charset.availableCharsets().get(availableCharsetsKeys.get(   // find the key to the charset
-                file.getName().substring(file.getName().lastIndexOf('.'))        // from the end of the file name, after the '.'
-            ));
-        } 
-        catch (Exception e) {
-            return null;
-        }    }
+        return null;
+    }
 }
