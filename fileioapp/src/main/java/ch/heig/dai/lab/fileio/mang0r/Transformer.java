@@ -64,7 +64,6 @@ public class Transformer {
         }
         sb.deleteCharAt(sb.length() - 1);
         sb.append("\n");
-        
         return sb.toString();
     }
 }   
