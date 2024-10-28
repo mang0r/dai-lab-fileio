@@ -51,6 +51,9 @@ public class Main {
         while ((f = explorer.getNewFile()) != null) {
             try {
                 // TODO: loop over all files
+                // skip already processed files
+                if ((f.getName().substring(f.getName().lastIndexOf('.'))).equals("processed")) break;
+
                 File of = new File(f.getAbsolutePath() + ".processed");
                 frw.writeFile(
                     of,
